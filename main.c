@@ -1,3 +1,11 @@
+/*
+Andrew Atwater - main.c
+
+This file uses the functions in canvasMake.c to assemble the canvas of characters. 
+
+No help was needed for this file.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "canvasMake.h"
