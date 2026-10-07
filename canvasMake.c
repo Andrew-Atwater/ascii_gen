@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 char* pickChar(){
     //make character list
-    char *pick = "hi";
-    return pick;
+    
 }
 
 char* genRandomChar(){
