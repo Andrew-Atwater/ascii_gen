@@ -22,7 +22,7 @@ char **createCanvas(int width, int height){
     char **canvas = malloc(height * sizeof(char*)); //allocate memory of one character pointer per row 
     
     for(int i = 0; i < height; i++){
-        canvas[i] = malloc(width * sizeof(char)); //allocate one character's worth of memory per column
+        canvas[i] = malloc(width * sizeof(char)); //allocate one character's worth of memory per column, for every row
     }
 
     char characterList[] = {'a', 'b', 'c', '1', '2', '3', '!', '@', '#', '$'};
@@ -37,11 +37,21 @@ char **createCanvas(int width, int height){
     return canvas;
 }
 
-char printCanvas(){
-
+void printCanvas(char **canvas, int width, int height){ //basically just iterate through every possible space and print what is in the canvas
+    for(int row = 0; row < height; row++){
+        for(int column = 0; column < width; column++){
+            printf("%c", canvas[row][column]);
+        }
+        printf("\n");
+    }
 }
 
-char freeCanvas(){
-
+void freeCanvas(char **canvas, int width, int height){
+    //first we need to free each column
+    for(int i = 0; i < height; i++){
+        free(canvas[i]);
+    }
+    //now row pointer
+    free(canvas);
 }
 

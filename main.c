@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "canvasMake.h"
+#include <time.h>
 
 int main(int argc, char **argv){
     if(argc != 3){
@@ -13,11 +14,11 @@ int main(int argc, char **argv){
     int width = atoi(argv[1]);
     int height = atoi(argv[2]);
 
-    createCanvas(width, height); //create a 2d character array with the dimensions specified with CL
+    char **canvas = createCanvas(width, height); //create a 2d character array with the dimensions specified with CL
     
-    printCanvas(canvas);
+    printCanvas(canvas, width, height);
 
-    freeCanvas(canvas);
+    freeCanvas(canvas, width, height);
 
     return 0;
 }
